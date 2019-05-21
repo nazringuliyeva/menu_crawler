@@ -1,0 +1,36 @@
+{% extends "home/index.html" %}
+
+
+{% block main_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 map">
+                <iframe src="{{ object.google_map }}"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>{{ object.title }}</h1>
+                        <div class="row">
+                            <div class="col-md-12"><p style="font-weight: bold;">Address:</p></div>
+                            <div class="col-md-12"><p>{{ object.address }}</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"><p style="font-weight: bold;">Opening hours:</p></div>
+                            <div class="col-md-12">{{ object.work_time|safe }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"><p style="font-weight: bold;">Telephone:</p></div>
+                            <div class="col-md-12"><p>{{ object.phone }}</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12"><p style="font-weight: bold;">Email:</p></div>
+                            <div class="col-md-12"><p>{{ object.email }}</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
